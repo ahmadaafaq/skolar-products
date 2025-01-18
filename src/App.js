@@ -19,7 +19,7 @@ function App() {
         <Route path="/products" element={<ProductPage />} />
       </Routes>
       <div className=" fixed bottom-10  right-10 rounded-full text-white p-2 bg-green-500">
-        <a href="https://wa.me/+918865938263" target="_blank" className="">
+        <a href="https://wa.me/+918865938263" target="_blank" rel="noopener noreferrer" className="">
           <FaWhatsapp className="text-2xl " />
         </a>
       </div>
