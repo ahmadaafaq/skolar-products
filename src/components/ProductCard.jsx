@@ -5,6 +5,12 @@ import { IoIosArrowRoundForward } from "react-icons/io";
 const ProductCard = (props) => {
   const cardData = props.data;
 
+  function TextWithInnerHTML({ text }) {
+    return (
+      <div dangerouslySetInnerHTML={{ __html: text.replace(/<br>/g, '<br/>') }} />
+    );
+  }
+
   return (
     <div className="shadow-md transition-all hover:shadow-lg rounded-lg overflow-hidden bg-white">
       <div className="serviceCard">
@@ -20,7 +26,7 @@ const ProductCard = (props) => {
           {cardData.title}
         </h2>
         <p className="text-sm md:text-base text-gray-600 mb-4">
-          {cardData.description}
+          <TextWithInnerHTML text={cardData.description} />
         </p>
 
         <Link to="/">

@@ -5,7 +5,7 @@ import "react-toastify/dist/ReactToastify.css";
 import { CiLocationArrow1 } from "react-icons/ci";
 import { PiPhoneThin } from "react-icons/pi";
 import { SiMinutemailer } from "react-icons/si";
-import { FaInstagram } from "react-icons/fa";
+import { FaFacebook, FaInstagram } from "react-icons/fa";
 import { RiTwitterXFill } from "react-icons/ri";
 import { CiLinkedin } from "react-icons/ci";
 import { FaWhatsapp } from "react-icons/fa";
@@ -19,6 +19,8 @@ const ContactUs = () => {
     message: "",
     mobile: "",
   });
+
+  const message = "Hello";
 
   const [errors, setErrors] = useState({});
   const [loading, setLoading] = useState(false);
@@ -103,7 +105,7 @@ const ContactUs = () => {
                 <CiLocationArrow1 />
               </div>
               <span className="text-gray-600 text-sm lg:text-lg">
-                Address: Sector 2B, Vasundhara, <br /> Ghaziabad, Uttar Pradesh
+                Address: A-3, Ground Floor, <br /> Madhu Vihar, Delhi - 110092
               </span>
             </div>
 
@@ -111,8 +113,8 @@ const ContactUs = () => {
               <div className="border border-gray-400 p-2 rounded-full text-xl lg-text-2x">
                 <PiPhoneThin />
               </div>
-              <a href="tel:8865938263" className="text-gray-600 lg:text-lg">
-                Phone: +91 8865938263
+              <a href="tel:9911200588" className="text-gray-600 lg:text-lg">
+                Phone: +91 9911200588
               </a>
             </div>
 
@@ -126,16 +128,19 @@ const ContactUs = () => {
             </div>
 
             <div className="flex gap-6 lg:text-3xl text-3xl text-white pt-6">
-              <Link to="#">
+              <Link to="https://www.instagram.com/skolarmarketingteam/" target="_blank">
                 <FaInstagram className="bg-black p-[7px] lg:p-[7px] rounded-full hover:bg-gradient-to-tl hover:from-yellow-300 hover:via-pink-500 hover:to-purple-500 transition" />
               </Link>
-              <Link to="#">
+              <Link to="https://x.com/SkolarTeam" target="_blank">
                 <RiTwitterXFill className="bg-black p-[7px] lg:p-[7px] rounded-full hover:bg-blue-500 transition" />
               </Link>
-              <Link to="#">
+              <Link to="https://www.linkedin.com/in/skolar-marketing-team-aba08034b/" target="_blank">
                 <CiLinkedin className="bg-black p-[7px] lg:p-[7px] rounded-full hover:bg-blue-700 transition" />
               </Link>
-              <Link to="#">
+              <Link to="https://www.facebook.com/profile.php?id=61572904312362" target="_blank">
+                <FaFacebook className="bg-black p-[7px] lg:p-[7px] rounded-full hover:bg-blue-500 transition" />
+              </Link>
+              <Link to={`https://wa.me/9911200588?text=${encodeURIComponent(message)}`} target="_blank">
                 <FaWhatsapp className="bg-black p-[7px] lg:p-[7px] rounded-full hover:bg-green-500 transition" />
               </Link>
             </div>
