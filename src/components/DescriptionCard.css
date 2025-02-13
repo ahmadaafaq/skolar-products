@@ -1,0 +1,36 @@
+.description-card {
+  max-width: 100%; /* Changed from 600px to fit within the card */
+  margin: 0; /* Removed vertical margin */
+  padding: 0; /* Removed padding */
+  border: none; /* Removed border */
+  border-radius: 0; /* Removed border-radius */
+  background-color: transparent; /* Made background transparent */
+  box-shadow: none; /* Removed box-shadow */
+  font-family: inherit; /* Use the font from the parent element */
+  
+}
+
+.description-header {
+  font-weight: bold;
+  font-size: 1em; /* Slightly reduced size */
+  margin-bottom: 8px;
+  color: #333;
+}
+
+.description-body {
+  line-height: 1.8; /* Reduced line height */
+  color: #666;
+  font-size: 1em; /* Slightly reduced size */
+}
+/* 
+.description-header {
+  font-weight: bold;
+  font-size: 1.3em;
+  margin-bottom: 10px;
+}
+
+.description-body {
+  line-height: 2;
+  color: #333;
+  font-size: 1em
+} */

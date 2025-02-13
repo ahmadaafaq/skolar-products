@@ -1,13 +1,31 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { IoIosArrowRoundForward } from "react-icons/io";
+import './DescriptionCard.css';
 
 const ProductCard = (props) => {
   const cardData = props.data;
 
   function TextWithInnerHTML({ text }) {
+     const formattedDescription = text.replace(/<br>/g, '<br/>');
+       // Split the description by <br> tags (handles both <br> and <br/>)
+  const lines = text.split(/<br\s*\/?>/);
+  const header = lines.shift(); // Extracts the first line
+  const body = lines.join('<br/>');
     return (
-      <div dangerouslySetInnerHTML={{ __html: text.replace(/<br>/g, '<br/>') }} />
+      // <div dangerouslySetInnerHTML={{ __html: text.replace(/<br>/g, '<br/>') }} />
+      <>
+      <div className="description-card">
+      <div 
+        className="description-header" 
+        dangerouslySetInnerHTML={{ __html: header }} 
+      />
+      <div 
+        className="description-body" 
+        dangerouslySetInnerHTML={{ __html: body }} 
+      />
+    </div>
+    </>
     );
   }
 
@@ -21,11 +39,11 @@ const ProductCard = (props) => {
         />
       </div>
 
-      <div className="px-5 py-4">
-        <h2 className="font-bold uppercase text-md md:text-lg mb-3">
+      <div className="px-4 py-2">
+        <h2 className="font-bold uppercase text-md mb-2 mt-5 md:text-2xl">
           {cardData.title}
         </h2>
-        <p className="text-sm md:text-base text-gray-600 mb-4">
+        <p className="text-sm md:text-base text-gray-200 mb-7">
           <TextWithInnerHTML text={cardData.description} />
         </p>
 
